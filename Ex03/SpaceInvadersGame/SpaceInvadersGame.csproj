@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PublishReadyToRun>false</PublishReadyToRun>
+    <TieredCompilation>false</TieredCompilation>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="GamesObjects\**" />
+    <EmbeddedResource Remove="GamesObjects\**" />
+    <None Remove="GamesObjects\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="SpaceInvadersObjects\EnemyBullet.cs" />
+    <Compile Remove="SpaceInvadersObjects\SpaceInvadersGameSettings.cs" />
+    <Compile Remove="SpaceInvadersObjects\SpaceShipBullet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Content\Sprites\Enemies_32x192.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EditorConfigFiles Include="Content\Sprites\Enemies_32x192.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <TrimmerRootAssembly Include="Microsoft.Xna.Framework.Content.ContentTypeReader" Visible="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.WindowsDX" Version="3.8.0.1641" />
+    <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.0.1641" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
