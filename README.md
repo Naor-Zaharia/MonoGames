@@ -1,0 +1,1 @@
+A project that contains both a large-scale infrastructure for 2D games with the MonoGame framework and a space invaders game that demonstrates the usage of the infrastructure
